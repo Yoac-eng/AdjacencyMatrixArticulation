@@ -1,20 +1,20 @@
 
 j
-java:S3824^"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(‰šîˆüÿÿÿÿ8ÈëÄË1
+java:S3824a"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(‰šîˆüÿÿÿÿ8œÈ»ÄË1
 n
-java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¿Û»}8ÍëÄË1
-F	java:S106@"+Replace this use of System.out by a logger.(¡­Ÿ 8ÎëÄË1
-F	java:S106E"+Replace this use of System.out by a logger.(¡­Ÿ 8ÎëÄË1
-H	java:S106…"+Replace this use of System.out by a logger.(º„—à8ÑëÄË1
-M	java:S106‡"+Replace this use of System.out by a logger.(öŸÂíûÿÿÿÿ8ÑëÄË1
+java:S3776)"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¿Û»}8 È»ÄË1
+G	java:S106="+Replace this use of System.out by a logger.(¹Ø¤å8¡È»ÄË1
+G	java:S106B"+Replace this use of System.out by a logger.(¹Ø¤å8¡È»ÄË1
+H	java:S106ˆ"+Replace this use of System.out by a logger.(º„—à8¤È»ÄË1
+M	java:S106Š"+Replace this use of System.out by a logger.(öŸÂíûÿÿÿÿ8¤È»ÄË1
 p
-java:S3776’"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(£Ä‚Ó8ÑëÄË1
-M	java:S106”"+Replace this use of System.out by a logger.(²™ß¾ùÿÿÿÿ8ÒëÄË1
-M	java:S106­"+Replace this use of System.out by a logger.(–äïşûÿÿÿÿ8ÒëÄË1
-G	java:S106®"+Replace this use of System.out by a logger.(ŠÀ¡8ÓëÄË1
-M	java:S106¹"+Replace this use of System.out by a logger.(‚˜õ›şÿÿÿÿ8ÓëÄË1
-M	java:S106Â"+Replace this use of System.out by a logger.(‹–ö¼ıÿÿÿÿ8ÓëÄË1
-G	java:S106Å"+Replace this use of System.out by a logger.(Ê Ğx8ÓëÄË1
-M	java:S106Ç"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ÔëÄË1
-Z
-java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8ÔëÄË1
+java:S3776•"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(£Ä‚Ó8¤È»ÄË1
+M	java:S106—"+Replace this use of System.out by a logger.(²™ß¾ùÿÿÿÿ8¤È»ÄË1
+M	java:S106°"+Replace this use of System.out by a logger.(–äïşûÿÿÿÿ8¥È»ÄË1
+G	java:S106±"+Replace this use of System.out by a logger.(ŠÀ¡8¥È»ÄË1
+M	java:S106¼"+Replace this use of System.out by a logger.(‚˜õ›şÿÿÿÿ8¦È»ÄË1
+H	java:S106Ê"+Replace this use of System.out by a logger.(¥šÓ8§È»ÄË1
+M	java:S106ã"+Replace this use of System.out by a logger.(ªøö·üÿÿÿÿ8§È»ÄË1
+M	java:S106ë"+Replace this use of System.out by a logger.(‹–ö¼ıÿÿÿÿ8ş‡¼ÄË1
+G	java:S106î"+Replace this use of System.out by a logger.(Ê Ğx8øõØÄË1
+M	java:S106ğ"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8‡´áÄË1

@@ -47,7 +47,8 @@ public class GraphReader {
 //            graph.findArticulationPoints();
 //            graph.checkNodesAdjacency("A", "B");
 //            graph.checkNodesAdjacency("A", "C");
-            graph.calculateNodeDegree("A");
+//            graph.calculateNodeDegree("A");
+//            graph.nodeNeighborsSearch("A");
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo: " + e.getMessage());
         }

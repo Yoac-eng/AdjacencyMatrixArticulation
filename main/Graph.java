@@ -1,9 +1,6 @@
 package main;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class Graph {
     private boolean driven;
@@ -61,12 +58,12 @@ public class Graph {
                     // Verificar se o vértice atual é um ponto de articulação
                     // Caso 1: u é a raiz da DFS e tem dois ou mais filhos
                     if (parent[u] == -1 && children > 1) {
-                        System.out.println(getKeyByValue(u) + " é um vértice de articulação");
+                        System.out.println(getNodeName(u) + " é um vértice de articulação");
                     }
 
                     // Caso 2: Se u não é a raiz e o valor mínimo de um de seus filhos é maior ou igual ao tempo de descoberta de u
                     if (parent[u] != -1 && low[v] >= discoveryTime[u]) {
-                        System.out.println(getKeyByValue(u) + " é um vértice de articulação");
+                        System.out.println(getNodeName(u) + " é um vértice de articulação");
                     }
                 } else if (v != parent[u]) {
                     // Atualiza o valor mínimo de u para o tempo de descoberta de v
@@ -76,7 +73,13 @@ public class Graph {
         }
     }
 
-    public String getKeyByValue(int value){
+    /**
+     * Retorna o nome do vértice correspondente ao endereço na lista
+     * informado.
+     * @param value Valor do vértice no mapeamento vértice - index.
+     * @return Nome do vértice.
+     */
+    public String getNodeName(int value){
         for(Map.Entry<String, Integer> entry : nodesIndexes.entrySet()) {
             if(entry.getValue().equals(value)){
                 return entry.getKey();
@@ -184,6 +187,44 @@ public class Graph {
 
             System.out.println("O grau do vértice" + node + "é: " + nodeDegree);
         }
+    }
+
+    /**
+     * Retorna uma lista de vizinhos para um dado vértice.
+     * Em um grafo dirigido, retorna tanto os sucessores quanto os predecessores.
+     * Em um grafo não dirigido, retorna todos os vértices conectados.
+     *
+     * @param node O nome do vértice.
+     * @return Lista de vizinhos do vértice.
+     */
+    public void nodeNeighborsSearch(String node) {
+        if (node == null || node.isEmpty() || !nodesIndexes.containsKey(node)) {
+            System.out.println("O vértice informado não existe no grafo. Vértices válidos: " + nodesIndexes.keySet());
+            return;
+        }
+
+        int nIndex = nodesIndexes.get(node);
+        Set<String> neighbors = new HashSet<>();
+
+        // Para grafos dirigidos, um vértice adjacente é um vértice
+        // para o qual existem arestas saindo do vértice especificado
+        if (driven) {
+            for (int i = 0; i < nodesCounter; i++) {
+                if (adjacencyMatrix[nIndex][i] != 0) { // Destinos
+                    neighbors.add(getNodeName(i));
+                }
+            }
+        } else {
+            // Para grafos não dirigidos, adicionar quaisquer conexões bi-direcionais
+            for (int i = 0; i < nodesCounter; i++) {
+                if (adjacencyMatrix[nIndex][i] != 0 && adjacencyMatrix[i][nIndex] != 0) {
+                    neighbors.add(getNodeName(i));
+                }
+            }
+        }
+
+        // Imprimir os vizinhos
+        System.out.println("Vizinhos do vértice " + node + ": " + neighbors);
     }
 
     /**
