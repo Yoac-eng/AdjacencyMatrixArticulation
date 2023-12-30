@@ -119,20 +119,20 @@ public class Graph {
     /**
      * Verifica a adjacência entre dois vértices determinados.
      * A forma de verificar muda se o grafo for dirigido ou não.
-     * @param nx O nome do vértice de origem.
-     * @param ny O nome do vértice de destino.
+     * @param origin O nome do vértice de origem.
+     * @param destiny O nome do vértice de destino.
      */
-    public void checkNodesAdjacency(String nx, String ny){
-        int nxIndex = nodesIndexes.get(nx);
-        int nyIndex = nodesIndexes.get(ny);
+    public void checkNodesAdjacency(String origin, String destiny){
+        int nxIndex = nodesIndexes.get(origin);
+        int nyIndex = nodesIndexes.get(destiny);
 
         boolean isAdjacent = driven ? adjacencyMatrix[nxIndex][nyIndex] != 0 :
                                       adjacencyMatrix[nxIndex][nyIndex] != 0 && adjacencyMatrix[nyIndex][nxIndex] != 0;
 
         if(isAdjacent){
-            System.out.println("Os vértices " + nx + " e " + ny + " são adjacentes");
+            System.out.println("Os vértices " + origin + " e " + destiny + " são adjacentes");
         } else{
-            System.out.println("Os vértices " + nx + " e " + ny + " não são adjacentes");
+            System.out.println("Os vértices " + origin + " e " + destiny + " não são adjacentes");
         }
     }
 
