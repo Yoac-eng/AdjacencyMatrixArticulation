@@ -1,0 +1,14 @@
+
+j
+java:S3824^"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(‰šîˆüÿÿÿÿ8´Á†ÂË1
+n
+java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¿Û»}8¹Á†ÂË1
+F	java:S106@"+Replace this use of System.out by a logger.(¡­Ÿ 8ºÁ†ÂË1
+F	java:S106E"+Replace this use of System.out by a logger.(¡­Ÿ 8ºÁ†ÂË1
+H	java:S106…"+Replace this use of System.out by a logger.(Õı¦à8¿Á†ÂË1
+H	java:S106‡"+Replace this use of System.out by a logger.(Î‰Ÿ8¿Á†ÂË1
+M	java:S106"+Replace this use of System.out by a logger.(‹–ö¼ıÿÿÿÿ8ÀÁ†ÂË1
+G	java:S106“"+Replace this use of System.out by a logger.(Ê Ğx8ÀÁ†ÂË1
+M	java:S106•"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ÀÁ†ÂË1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8ÁÁ†ÂË1

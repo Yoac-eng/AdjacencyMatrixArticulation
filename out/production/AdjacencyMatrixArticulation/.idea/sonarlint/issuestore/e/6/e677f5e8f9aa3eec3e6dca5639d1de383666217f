@@ -1,0 +1,7 @@
+
+n
+java:S2677"LUse or store the value returned from "readLine" instead of throwing it away.(ìÔˆøúÿÿÿÿ8·æîÊ1
+{
+java:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(áŒ—öÿÿÿÿÿ8ÕæîÊ1
+G	java:S106"+Replace this use of System.err by a logger.(˜ ‡ÿ8ÖæîÊ1
+G	java:S106/"+Replace this use of System.err by a logger.(˜ ‡ÿ8ÜæîÊ1
