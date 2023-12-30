@@ -49,6 +49,7 @@ public class GraphReader {
 //            graph.checkNodesAdjacency("A", "C");
 //            graph.calculateNodeDegree("A");
 //            graph.nodeNeighborsSearch("A");
+            graph.printAllEdges();
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo: " + e.getMessage());
         }

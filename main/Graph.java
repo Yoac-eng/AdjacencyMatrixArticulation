@@ -228,6 +228,31 @@ public class Graph {
     }
 
     /**
+     * Imprime todas as arestas do grafo.
+     */
+    public void printAllEdges() {
+        if (driven) {
+            // Para grafos dirigidos
+            for (int i = 0; i < nodesCounter; i++) {
+                for (int j = 0; j < nodesCounter; j++) {
+                    if (adjacencyMatrix[i][j] != 0) {
+                        System.out.println(getNodeName(i) + " -> " + getNodeName(j));
+                    }
+                }
+            }
+        } else {
+            // Para grafos não dirigidos
+            for (int i = 0; i < nodesCounter; i++) {
+                for (int j = i; j < nodesCounter; j++) {
+                    if (adjacencyMatrix[i][j] != 0 && adjacencyMatrix[j][i] != 0) {
+                        System.out.println(getNodeName(i) + " -- " + getNodeName(j));
+                    }
+                }
+            }
+        }
+    }
+
+    /**
      * Percorre as colunas e linhas da matriz e imprime-a
      * no console.
      */
