@@ -119,8 +119,8 @@ public class Graph {
     /**
      * Verifica a adjacência entre dois vértices determinados.
      * A forma de verificar muda se o grafo for dirigido ou não.
-     * @param nx
-     * @param ny
+     * @param nx O nome do vértice de origem.
+     * @param ny O nome do vértice de destino.
      */
     public void checkNodesAdjacency(String nx, String ny){
         int nxIndex = nodesIndexes.get(nx);
@@ -130,9 +130,59 @@ public class Graph {
                                       adjacencyMatrix[nxIndex][nyIndex] != 0 && adjacencyMatrix[nyIndex][nxIndex] != 0;
 
         if(isAdjacent){
-            System.out.println("Os seguintes vértices são adjacentes: " + nx + " e " + ny);
+            System.out.println("Os vértices " + nx + " e " + ny + " são adjacentes");
         } else{
-            System.out.println("Não são adjacentes");
+            System.out.println("Os vértices " + nx + " e " + ny + " não são adjacentes");
+        }
+    }
+
+    /**
+     * Calcula e exibe o grau de um vértice em um grafo.
+     * Para grafos direcionados, exibe graus de emissão e recepção.
+     * Para grafos não direcionados, exibe o grau do vértice.
+     *
+     * @param node O nome do vértice para calcular o grau.
+     */
+    public void calculateNodeDegree(String node){
+        if (!nodesIndexes.containsKey(node)) {
+            System.out.println("O vértice informado não existe no grafo obtido. Vértices válidos: " + nodesIndexes.keySet());
+            return;
+        }
+
+        int nIndex= nodesIndexes.get(node);
+
+        // Em caso de digrafo, calcular o gráu de emissão e de recepção
+        if(driven){
+            int emissionDegree = 0;
+            int receptionDegree = 0;
+
+            // Quantos 1 tem na linha do nó na matriz
+            for(int i = 0; i < nodesCounter; i++){
+                if(adjacencyMatrix[nIndex][i] != 0){
+                    emissionDegree++;
+                }
+            }
+
+            // Quantos 1 tem na coluna do nó na matriz
+            for(int i = 0; i < nodesCounter; i++){
+                if(adjacencyMatrix[i][nIndex] != 0){
+                    receptionDegree++;
+                }
+            }
+
+            System.out.println("O grau de emissão do vértice " + node + " é: " + emissionDegree);
+            System.out.println("O grau de recepção do vértice " + node + " é: " + receptionDegree);
+        } else {
+            int nodeDegree = 0;
+            // No caso do grafo não direcionado o grau pode ser definido
+            // tanto pelas linhas quanto pelas colunas
+            for(int i = 0; i < nodesCounter; i++){
+                if(adjacencyMatrix[nIndex][i] != 0){
+                    nodeDegree++;
+                }
+            }
+
+            System.out.println("O grau do vértice" + node + "é: " + nodeDegree);
         }
     }
 

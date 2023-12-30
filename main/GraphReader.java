@@ -43,10 +43,11 @@ public class GraphReader {
 
             graph.printGraph();
             System.out.println();
-            System.out.println("Vertíces de articulação na matriz:");
-            graph.findArticulationPoints();
-            graph.checkNodesAdjacency("A", "B");
-            graph.checkNodesAdjacency("A", "C");
+//            System.out.println("Vertíces de articulação na matriz:");
+//            graph.findArticulationPoints();
+//            graph.checkNodesAdjacency("A", "B");
+//            graph.checkNodesAdjacency("A", "C");
+            graph.calculateNodeDegree("A");
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo: " + e.getMessage());
         }
