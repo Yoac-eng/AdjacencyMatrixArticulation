@@ -1,0 +1,27 @@
+
+j
+java:S3824l"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(‰šîˆüÿÿÿÿ8é±ÃƒÌ1
+g
+java:S37764"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¿Û»}
+@	java:S106H"+Replace this use of System.out by a logger.(¹Ø¤å
+@	java:S106M"+Replace this use of System.out by a logger.(¹Ø¤å
+A	java:S106“"+Replace this use of System.out by a logger.(º„—à
+F	java:S106•"+Replace this use of System.out by a logger.(öŸÂíûÿÿÿÿ
+i
+java:S3776 "RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(£Ä‚Ó
+F	java:S106¢"+Replace this use of System.out by a logger.(²™ß¾ùÿÿÿÿ
+F	java:S106»"+Replace this use of System.out by a logger.(–äïşûÿÿÿÿ
+@	java:S106¼"+Replace this use of System.out by a logger.(ŠÀ¡
+F	java:S106Ç"+Replace this use of System.out by a logger.(‚˜õ›şÿÿÿÿ
+A	java:S106Õ"+Replace this use of System.out by a logger.(¥šÓ
+F	java:S106î"+Replace this use of System.out by a logger.(ªøö·üÿÿÿÿ
+n
+java:S3776ô"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(éüÿÿÿÿ
+@	java:S106ú"+Replace this use of System.out by a logger.(úåãU
+A	java:S106ƒ"+Replace this use of System.out by a logger.(£Ú»Ğ
+M	java:S106£"+Replace this use of System.err by a logger.(Àëß‚üÿÿÿÿ8„¹¼šÌ1
+R
+java:S2864®"4Iterate over the "entrySet" instead of the "keySet".(†öèë8¯ ²ƒÌ1
+F	java:S106Ã"+Replace this use of System.out by a logger.(‹–ö¼ıÿÿÿÿ
+@	java:S106Æ"+Replace this use of System.out by a logger.(Ê Ğx
+F	java:S106È"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
