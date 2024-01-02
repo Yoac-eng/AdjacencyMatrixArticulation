@@ -14,10 +14,10 @@ import java.util.*;
  * @author Cayo Cutrim
  */
 public class Graph {
-    private boolean driven;
-    private int[][] adjacencyMatrix;
-    private Map<String, Integer> nodesIndexes;
-    private int nodesCounter;
+    private boolean driven;             // Representa se o grafo é dirigido ou não
+    private int[][] adjacencyMatrix;    // Estrutura de dados responsável por armazenar o grafo
+    private Map<String, Integer> nodesIndexes;     // Coleção que mapeia o nome dos vértices e suas posições na estrutura
+    private int nodesCounter;           // Quantidade de vértices
 
     // Variáveis adicionais para a busca em profundidade
     private int time;                   // Para marcar o tempo de descoberta de cada vértice
@@ -33,6 +33,17 @@ public class Graph {
         this.nodesCounter = 0;
     }
 
+    /**
+     * Identifica e exibe todos os pontos de articulação (vértices de corte) no grafo.
+     * Um ponto de articulação é um vértice cuja remoção aumenta o número de componentes conectados no grafo.
+     * Este método utiliza a busca em profundidade (DFS) para identificar tais pontos.
+     *
+     * A estratégia para encontrar pontos de articulação é baseada no conceito de tempos de descoberta
+     * e valores 'low' durante a execução do DFS. Um vértice 'u' é um ponto de articulação se satisfaz uma das seguintes condições:
+     * 1. 'u' é a raiz da árvore DFS e tem dois ou mais filhos.
+     * 2. 'u' não é a raiz da árvore DFS, e tem um filho 'v' tal que nenhum vértice na subárvore enraizada em 'v'
+     *    tem uma aresta de volta para um ancestral de 'u'.
+     */
     public void findArticulationPoints() {
         time = 0;
         discoveryTime = new int[nodesCounter];
@@ -49,6 +60,13 @@ public class Graph {
         }
     }
 
+    /**
+     * Método privado para realizar a busca em profundidade (DFS) a partir de um vértice específico.
+     * Durante a execução da DFS, calcula os tempos de descoberta e os valores 'low' para cada vértice.
+     * Esses valores são utilizados para identificar pontos de articulação.
+     *
+     * @param u O índice do vértice a partir do qual a DFS é iniciada.
+     */
     private void dfs(int u) {
         // Marcar o vértice atual como visitado
         visited[u] = true;
@@ -202,14 +220,14 @@ public class Graph {
 
     /**
      * Retorna uma lista de vizinhos para um dado vértice.
-     * Em um grafo dirigido, retorna tanto os sucessores quanto os predecessores.
+     * Em um grafo dirigido, retorna todos os vértices sucessores.
      * Em um grafo não dirigido, retorna todos os vértices conectados.
      *
      * @param node O nome do vértice.
      * @return Lista de vizinhos do vértice.
      */
     public void nodeNeighborsSearch(String node) {
-        if (node == null || node.isEmpty() || !nodesIndexes.containsKey(node)) {
+        if (!nodesIndexes.containsKey(node)) {
             System.out.println("O vértice informado não existe no grafo. Vértices válidos: " + nodesIndexes.keySet());
             return;
         }

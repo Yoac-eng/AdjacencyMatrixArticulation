@@ -1,5 +1,6 @@
 package org.yoaceng;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static org.yoaceng.GraphReader.readGraphFromAdjacencyListFile;
@@ -26,9 +27,22 @@ public class App {
                 System.out.println("6. Visitar todas as arestas do grafo");
                 System.out.println("7. Gerar um arquivo de texto novo com a estrutura de visualização gráfica do grafo e visualizar ele graficamente");
                 System.out.println("8. Sair");
-                System.out.println();
 
-                int choice = scanner.nextInt();
+                int choice = 0;
+                boolean validInput = false;
+
+                while (!validInput) {
+                    try {
+                        System.out.println("Escolha uma opção:");
+                        // Opções do menu
+                        choice = scanner.nextInt();
+                        validInput = true; // Se chegou até aqui, a entrada é válida
+                    } catch (InputMismatchException e) {
+                        System.out.println("Entrada inválida. Por favor, insira um número.");
+                        scanner.nextLine(); // Limpa o buffer do scanner
+                    }
+                }
+
                 switch (choice) {
                     case 1:
                         graph.printGraph();
@@ -56,9 +70,12 @@ public class App {
                         graph.printAllEdges();
                         break;
                     case 7:
-                        graph.saveAdjacencyListToFile(NEWFILEPATH); // Cria um arquivo novo com o formato para gerar o gráfico do grafo
-                        Graph graphFromNewFile = readGraphFromAdjacencyListFile(NEWFILEPATH); // Lê esse novo arquivo e armazena o novo grafo
-                        GraphVisualizer.displayGraph(graphFromNewFile); // Agora com a lista de adjacencia o gráfico do grafo é gerado
+                        // Cria um arquivo novo com o formato para gerar o gráfico do grafo
+                        graph.saveAdjacencyListToFile(NEWFILEPATH);
+                        // Lê esse novo arquivo e armazena o novo grafo
+                        Graph graphFromNewFile = readGraphFromAdjacencyListFile(NEWFILEPATH);
+                        // Agora com a lista de adjacencia o gráfico do grafo é gerado
+                        GraphVisualizer.displayGraph(graphFromNewFile);
                         break;
                     case 8:
                         running = false;

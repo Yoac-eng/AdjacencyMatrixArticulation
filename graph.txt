@@ -1,8 +1,6 @@
-ND
+D
 A, B
-A, D
 B, C
-D, C
-C, E
-C, F
-E, F
+C, A
+A, D
+D, B
